@@ -11,9 +11,11 @@ def get_vxn():
     return price
 
 nlv = float(sys.argv[1]) if len(sys.argv) > 1 else 5000
+position = float(sys.argv[2]) if len(sys.argv) > 2 else 0
 vxn = get_vxn()
 result = (vxn / 100) * nlv
 
 print(f"Current VXN:  {vxn:.2f}")
 print(f"NLV:          {nlv:,}")
+print(f"Position:     {position:,}")
 print(f"Result:       {result:,.2f}")

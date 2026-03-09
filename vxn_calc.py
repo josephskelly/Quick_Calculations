@@ -9,8 +9,10 @@ def get_vxn():
     price = data["chart"]["result"][0]["meta"]["regularMarketPrice"]
     return price
 
+nlv = 5000
 vxn = get_vxn()
-result = (vxn / 100) * 5000
+result = (vxn / 100) * nlv
 
 print(f"Current VXN:  {vxn:.2f}")
-print(f"Result:       {result:,.2f}  (VXN / 100 × 5,000)")
+print(f"NLV:          {nlv:,}")
+print(f"Result:       {result:,.2f}")

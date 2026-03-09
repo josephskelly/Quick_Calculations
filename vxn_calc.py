@@ -1,3 +1,4 @@
+import sys
 import requests
 
 def get_vxn():
@@ -9,7 +10,7 @@ def get_vxn():
     price = data["chart"]["result"][0]["meta"]["regularMarketPrice"]
     return price
 
-nlv = 5000
+nlv = float(sys.argv[1]) if len(sys.argv) > 1 else 5000
 vxn = get_vxn()
 result = (vxn / 100) * nlv
 

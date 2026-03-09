@@ -13,11 +13,12 @@ def get_vxn():
 parser = argparse.ArgumentParser()
 parser.add_argument("--nlv", type=float, default=5000)
 parser.add_argument("--position", type=float, default=0)
+parser.add_argument("--vxn", type=float, default=None)
 args = parser.parse_args()
 
 nlv = args.nlv
 position = args.position
-vxn = get_vxn()
+vxn = args.vxn if args.vxn is not None else get_vxn()
 result = (vxn / 100) * nlv
 
 difference = result - position

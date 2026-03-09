@@ -1,4 +1,4 @@
-import sys
+import argparse
 import requests
 
 def get_vxn():
@@ -10,8 +10,13 @@ def get_vxn():
     price = data["chart"]["result"][0]["meta"]["regularMarketPrice"]
     return price
 
-nlv = float(sys.argv[1]) if len(sys.argv) > 1 else 5000
-position = float(sys.argv[2]) if len(sys.argv) > 2 else 0
+parser = argparse.ArgumentParser()
+parser.add_argument("--nlv", type=float, default=5000)
+parser.add_argument("--position", type=float, default=0)
+args = parser.parse_args()
+
+nlv = args.nlv
+position = args.position
 vxn = get_vxn()
 result = (vxn / 100) * nlv
 

@@ -20,7 +20,14 @@ position = args.position
 vxn = get_vxn()
 result = (vxn / 100) * nlv
 
+difference = result - position
+
 print(f"Current VXN:  {vxn:.2f}")
 print(f"NLV:          {nlv:,}")
 print(f"Position:     {position:,}")
 print(f"Result:       {result:,.2f}")
+print()
+if difference > 0:
+    print(f"Buy {difference:,.2f} to reach your target.")
+else:
+    print(f"No purchase needed. Your position exceeds the target by {abs(difference):,.2f}.")

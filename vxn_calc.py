@@ -69,3 +69,6 @@ if difference > 0:
     print(f"Buy {difference:,.2f} to reach your target.")
 else:
     print(f"No purchase needed. Your position exceeds the target by {abs(difference):,.2f}.")
+
+alert_vxn = (position / nlv) * 100
+print(f"Set VXN alert at:  {alert_vxn:.2f}")
